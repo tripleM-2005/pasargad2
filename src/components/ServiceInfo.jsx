@@ -108,7 +108,7 @@ const ServiceInfo = ({ data }) => {
     <>
       <Container className="mt-5 p-lg-5 p-4 box">
         <div
-          className="w-100"
+          className="w-100 header-content"
           style={{
             display: "flex",
             justifyContent: "space-between",

@@ -1,33 +1,30 @@
 import {
-  faArrowRightLong,
-  faGear,
-  faSliders,
-  faToggleOff,
+    faArrowRightLong,
+    faGear,
+    faSliders,
+    faToggleOff,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Container, Row } from "react-bootstrap";
+import Logo from "./../assets/images/Logo.jpg";
+import { Container, Row} from "react-bootstrap";
 
 const Header = () => {
-  const icons = [faSliders, faToggleOff, faGear, faArrowRightLong];
+    const icons = [faSliders, faToggleOff, faGear, faArrowRightLong];
 
-  return (
-    <>
-      <Container className="header pt-5">
-        <Row className="justify-content-center p-5" id="icon-list">
-          <div className="blur" />
-          {icons.map((icon, index) => (
-            <Col xs="auto" key={index}>
-              <FontAwesomeIcon size="2xl" icon={icon} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-      <div className="justify-content-center d-flex pt-1 pb-5 title">
-        <span className="text-span">{"!"}</span>
-        <h1>{"به پنل کاربری خوش آمدید"}</h1>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Container>
+                <Row className={"items mt-5 gap-5 flex-row flex-nowrap items-container"} xs={-1} md={-2}>
+                    <Row className={"box image-container  p-lg-5 p-4"}>
+                        <img src={Logo} alt="logo"/>
+                    </Row>
+                    <Row className={"box  p-4 flex-shrink-1 "}>
+                        <div className={"justify-content-center text-nowrap flex d-flex pt-1 title"}>
+                            <h1>{"به پنل پاسارگاد خوش آمدید"}</h1>
+                        </div>
+                    </Row>
+                </Row>
+            </Container>
+        </>
+    );
 };
-
 export default Header;

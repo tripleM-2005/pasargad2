@@ -2,8 +2,13 @@
 @import "react-toastify/dist/ReactToastify.css";
 @import url(./assets/fonts/_fonts.scss);
 
-$main-color: #94143a;
-$main-color-light: rgb(191, 55, 96);
+$main-color: rgb(87 69 0);
+$main-color-light: rgb(226 196 109);
+$primary: rgb(226 196 109);
+$tint: rgb(226 196 109);
+$onPrimary: rgb(60 47 0);
+$primaryContainer: rgb(87 69 0);
+$onPrimaryContainer: rgb(255 224 136);
 
 .header {
   #icon-list {
@@ -79,17 +84,14 @@ $main-color-light: rgb(191, 55, 96);
 
 .title {
   width: 96%;
-  padding: 0 16px;
   align-items: center;
-  border-bottom: 1px solid #202020;
   color: #fff;
-  font-style: bold;
   font-weight: 700;
   line-height: normal;
   font-size: calc(0.55rem + 4vw);
 
   h1 {
-    font-size: inherit;
+    font-size: clamp(24px, 4vw, 72px);
     font-weight: 700;
   }
 
@@ -100,20 +102,28 @@ $main-color-light: rgb(191, 55, 96);
 
 .info-title {
   align-items: center;
-  background: linear-gradient(270deg, #3d50614d, #12151700);
   border-radius: 25px;
   display: flex;
   justify-content: center;
   padding: 4px 13px;
-  width: -moz-max-content;
   width: max-content;
+  flex: 1;
+  white-space: nowrap;
+  justify-self: center;
+
+
   svg {
-    color: $main-color;
+    color: $main-color !important;
+  }
+
+  h3 {
+    font-size: clamp(16px, 3vw, 32px);
   }
 }
 
 .box {
   background: #121517;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   border-radius: 2rem;
   direction: rtl;
   font-weight: 700;
@@ -129,6 +139,7 @@ $main-color-light: rgb(191, 55, 96);
       grid-column: span 2;
     }
 
+
     .icon-holder {
       background: linear-gradient(180deg, #1c2124, #1c212400);
       height: 40px;
@@ -137,12 +148,16 @@ $main-color-light: rgb(191, 55, 96);
       align-items: center;
       border-radius: 0.9rem;
       display: flex;
+
+      > svg {
+        color: $primary !important;
+      }
     }
 
     .item {
       width: auto;
       background: #181c1f;
-      padding: 0px 0.5rem;
+      padding: 0.5rem 0.5rem;
       align-items: center;
       border-radius: 14px;
 
@@ -332,6 +347,7 @@ $main-color-light: rgb(191, 55, 96);
   .apps-col {
     background-color: #181c1f;
     border-radius: 1rem;
+
     .list-group {
       display: flex;
       flex-direction: column;
@@ -367,6 +383,7 @@ $main-color-light: rgb(191, 55, 96);
           font-size: 1.7rem;
           cursor: pointer;
           color: $main-color;
+
           a {
             color: $main-color !important;
           }
@@ -382,10 +399,12 @@ $main-color-light: rgb(191, 55, 96);
 
     .nav-item {
       border-radius: 2rem;
+
       .active {
         background-color: #121517 !important;
         border-bottom: 1px solid $main-color;
       }
+
       a {
         color: #c6c6c6;
 
@@ -477,6 +496,7 @@ body {
     padding: 1.5rem 0rem !important;
   }
 }
+
 .modal-header .btn-close {
   padding: unset;
   margin: unset;
@@ -492,7 +512,7 @@ body {
   background-color: #262c30;
   border-radius: 0.5rem;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
-    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 
   .img-fluid {
     border: 0.5rem solid white;
@@ -519,6 +539,53 @@ body {
 .icon-copy {
   color: $main-color;
   transition: color 0.5s, transform 0.5s; /* Smooth color and transform transitions */
+}
+
+.items {
+  gap: 0.7rem;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.items-container {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 425px) {
+    flex-wrap: wrap !important;
+    gap: 0.7rem !important;
+
+  }
+  @media screen and (min-width: 425px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.image-container {
+  width: 18vw;
+  padding: 2vw !important;
+
+  @media screen and (max-width: 425px) {
+    width: 35vw;
+    padding: 3vw !important;
+  }
+
+
+  > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    padding: 0;
+  }
+}
+
+.header-content {
+
+  > svg {
+    color: $main-color;
+  }
 }
 
 // #root {
